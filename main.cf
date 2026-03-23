@@ -33,6 +33,7 @@ vv>v++++++++++++[^++++++++++v-]^- #set [2,3] to 119 (W)
     ­>[-] #clear posneg
     ^^^^< #go to pos
     [->+>+<<]>[-<+>] #dupe pos to [3,2] and restore it
+    <^[-]-[-[>][-]>[-]>[-]<<[<]>]v> #clear the grid
     >[-<^[>]+[<]v>>] #fill the cells to the position with 1s
     <^[>]-[-<] #set position to 254 to draw it
     vvvvvvv[>]+^[<] #reset guide line
