@@ -1,11 +1,15 @@
-vvvvvv>+>+>+>+>+>+>+>+>+>+>[<]^^^^^^ #setup pos reset on [1,7]
+vvvvvv>+>+>+>+>+>+>+>+>+>+>[<] #setup pos reset on [1,7]
+v+>+>+>+>+>+>+>+>^[<] #setup guide lines
+>++++++++++++++++>+>++++++++++++++++>+<<<v++>++>+>+#setup copy values
+^^^[<]^^^^^^ #reset to [1,1]
 vv>v++++++++++++[^++++++++++v-]^- #set [2,3] to 119 (W)
 >v++++++++++++++++[^++++++v-]^+ #set [3,3] to 97 (A)
 >v+++++++++++++++++++++++[^+++++v-]^ #set [4,3] to 115 (S)
 >v++++++++++[^++++++++++v-]^ #set [5,3] to 100 (D)
 >++++++++++++++++< #set [6,3] to 16 for vertical increment
+<<<<+ #go to [1,3]
 [
-    <<<<, #save input at [1,3]
+    [-], #save input at [1,3]
     [v+v+^^-] #dupe input at [1,4] & [1,5]
     >[v+v+^^-] #dupe [2,3] at [2,4] & [2,5]
     >[v+v+^^-] #dupe [3,3] at [3,4] & [3,5]
@@ -20,5 +24,17 @@ vv>v++++++++++++[^++++++++++v-]^- #set [2,3] to 119 (W)
     <[-^+v] #restore [1,3] using [1,4]
     v[->->->->-<<<<] #compare [1,4] with [2,4] to [5,4]
     [>] #go to the cell thats zero on [x,4]
-    
+    vvv- #remove a value from the guide line
+    v[-^^[<]^+vv[>]v]v[-^^^[<]>^+vv<[>]vv] #copy copy values to increment and posneg
+    ^^^[<]^ #go to increment
+    >-[<[-^^^^-vvvvvv[>]v+^^[<]^]] # if neg, negate to pos and restore to copy values
+    >>v[<]^> #reset to posneg
+    -[<[-^^^^+vvvvvv[>]v+^^[<]^]] # if pos, add to pos and restore copy values
+    ­>[-] #clear posneg
+    ^^^^< #go to pos
+    [->+>+<<]>[-<+>] #dupe pos to [3,2] and restore it
+    >[-<^[>]+[<]v>>] #fill the cells to the position with 1s
+    <^[>]-[-<] #set position to 254 to draw it
+    vvvvvvv[>]+^[<] #reset guide line
+    ^^>[-]>[-]>[-]>[-]vv[<]^^^^ #reset dupes and go back to input
 ]
