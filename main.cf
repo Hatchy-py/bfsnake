@@ -37,5 +37,6 @@ vv>v++++++++++++[^++++++++++v-]^- #set [2,3] to 119 (W)
     >[-<^[>]+[<]v>>] #fill the cells to the position with 1s
     <^[>]-[-<] #set position to 254 to draw it
     vvvvvvv[>]+^[<] #reset guide line
+    vvv>[-]++>[-]++>[-]+>[-]+^^^[<] #reset posneg guides
     ^^>[-]>[-]>[-]>[-]vv[<]^^^^ #reset dupes and go back to input
 ]
